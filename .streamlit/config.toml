@@ -1,0 +1,3 @@
+[#] Force Light mode by default; users can still switch in the Streamlit menu.
+[theme]
+base = "light"
