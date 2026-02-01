@@ -171,6 +171,11 @@ def donut_chart(df: pd.DataFrame, title: str):
     if total <= 0 or chart_df.empty:
         return None
 
+    theme_base = str(st.get_option("theme.base") or "").lower()
+    is_dark = theme_base == "dark"
+    label_color = "#FFFFFF" if is_dark else "#000000"
+    bg = st.get_option("theme.backgroundColor") or ("#0E1117" if is_dark else "#FFFFFF")
+
     colors = [
         "#1D4ED8",  # blue
         "#F59E0B",  # amber
@@ -190,7 +195,8 @@ def donut_chart(df: pd.DataFrame, title: str):
                 direction="clockwise",
                 textposition="outside",
                 texttemplate="%{label}<br>$%{value:,.2f} (%{percent:.1%})",
-                textfont=dict(color="black", size=13),
+                textfont=dict(color=label_color, size=13),
+                outsidetextfont=dict(color=label_color, size=13),
                 marker=dict(colors=colors),
                 showlegend=False,
                 hovertemplate="%{label}<br>$%{value:,.2f} (%{percent:.1%})<extra></extra>",
@@ -203,16 +209,20 @@ def donut_chart(df: pd.DataFrame, title: str):
         y=0.5,
         text=f"Total<br>{money(total)}",
         showarrow=False,
-        font=dict(color="black", size=13),
+        font=dict(color=label_color, size=13),
     )
 
     fig.update_layout(
-        title=dict(text=title, x=0.5, xanchor="center"),
+        title=dict(text=title, x=0.5, xanchor="center", font=dict(color=label_color)),
         width=480,
         height=480,
         margin=dict(l=50, r=50, t=50, b=50),
         uniformtext_minsize=9,
         uniformtext_mode="hide",
+        paper_bgcolor=bg,
+        plot_bgcolor=bg,
+        font=dict(color=label_color),
+        template="none",
     )
 
     return fig
