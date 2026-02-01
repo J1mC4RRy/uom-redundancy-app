@@ -13,7 +13,7 @@ import plotly.graph_objects as go
 # Page setup
 # ----------------------------
 st.set_page_config(
-    page_title="UoM PASO Redundancy Calculator",
+    page_title="Redundancy Calculator App",
     page_icon="💼",
     layout="wide",
 )
@@ -86,7 +86,7 @@ div[data-testid="stExpander"] details {
 # ----------------------------
 # Header
 # ----------------------------
-st.title("UoM PASO redundancy payout calculator")
+st.title("Redundancy calculator app")
 st.caption("Standard professional, admin, support. Base salary only. Super excluded.")
 
 # ----------------------------
@@ -470,74 +470,7 @@ st.markdown("---")
 # ----------------------------
 # Rules section
 # ----------------------------
-with st.expander("Clauses that matter for redundancy (PASO)", expanded=False):
-    st.markdown(
-        f"""
-### The process bits
-**1.40 Consultation on major change**  
-- Redundancy counts as a "significant effect".  
-- Uni should consult, share info, and listen.  
-- A consult window is common.
-
-**1.42 Grievance and dispute process**  
-- You can dispute process issues.  
-- You can escalate steps if it stays messy.
-
-### What redundancy is and what Uni must try first
-**1.45 What counts as redundancy, and what Uni must try first**  
-- Sets the redundancy triggers.  
-- Uni must try reasonable alternatives under 1.46 before involuntary separation.
-
-**1.46 Redeployment and alternatives**  
-- Defines "Suitable Alternative Position".  
-- Covers salary maintenance rules.  
-- Covers early separation and temporary redeployment.  
-- You cannot unreasonably decline a suitable role.
-
-### Notice
-**1.47 Redundancy notice**  
-- Uni tells you the role is redundant.  
-- The 8-week notice starts.  
-- Uni should still try redeployment during notice.  
-- Early separation can trigger pay in lieu of remaining notice plus redundancy pay.
-
-**3.25 Normal termination notice**  
-- Does not apply to redundancy.  
-- Redundancy notice is handled by 1.47.
-
-### The money formula
-**3.27 PASO redundancy pay formula**  
-- 3 weeks per completed year.  
-- Add 0.25 weeks per completed month.  
-- Add 2 weeks if you are 45+ on the notice date.  
-- Min 14 weeks, max 52 weeks.
-
-**3.27.4 What "salary/pay" includes**  
-- Base salary + allowances/loadings.  
-- Excludes additional hours and super.
-
-**3.27.5 When redundancy pay is not payable**  
-- Offered a suitable alternative role (and the rule applies).  
-- Accept alternative arrangements.  
-- Serious misconduct.
-
-### Leave and salary sacrifice protections
-**1.19.6 Annual leave payout**  
-- Unused annual leave is paid out at termination.
-
-**1.20.5 LSL payout on redundancy**  
-- Pro-rata LSL after 1 year if employment ends due to redundancy.  
-- Vic calculator: {LINK_VIC_LSL}
-
-**1.11.8 / 1.12.2 Salary sacrifice protection**  
-- Termination payments are calculated on salary as if you never salary-sacrificed.
-
-### Tax info (for context only)
-- ATO ETP and tax-free cap explainer: {LINK_ATO_ETP}
-"""
-    )
-
-st.markdown("---")
+# Clauses section removed per request
 
 # ----------------------------
 # Service + age cards (under clauses)
